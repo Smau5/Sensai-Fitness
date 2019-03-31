@@ -11,6 +11,7 @@ class CompanyLeadsController < ApplicationController
     def create
         @company_lead = CompanyLead.new(companyLead_params)
         if @company_lead.save
+            flash[:success] = "Register successful!"
             redirect_to company_leads_path
         else
             render 'new'
