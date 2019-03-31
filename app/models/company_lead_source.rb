@@ -1,0 +1,3 @@
+class CompanyLeadSource < ApplicationRecord
+
+end
