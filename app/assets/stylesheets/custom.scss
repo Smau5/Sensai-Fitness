@@ -1,0 +1,14 @@
+
+.jumbotron{
+    background-image: asset-url('sensaiFitnessBanner.jpg');
+    background-size: cover;
+    height: 1000px;
+}
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: rgb(26, 20, 20);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
