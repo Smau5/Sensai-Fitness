@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Company Leads Transaction source List</h1>
+    <% @transaction_sources.each do |transaction_source| %>
+    <div class="row">
+        <div class="col">
+            <%= transaction_source.id %>
+        </div>
+        <div class="col">
+            <%= transaction_source.name %>
+        </div>
+        <%= link_to "Edit this Transaction source", edit_company_lead_transaction_source_path(transaction_source), class: "btn btn-xs btn-primary" %>
+        <%= link_to "Delete this Transaction source", company_lead_transaction_source_path(transaction_source), 
+                method: :delete, 
+                data: { confirm: "Are you sure?" }, 
+                class: "btn btn-xs btn-danger" %>
+        </br>
+    </div>
+    <% end %>
+</div>

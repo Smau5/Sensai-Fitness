@@ -1,0 +1,10 @@
+<div class="container">
+    <h1> new transaction source</h1>
+    <%= form_for @transaction_source do |t| %>
+        <div class="form-group">
+            <%= t.label :name %>
+            <%= t.text_field :name, class: "form-control"  %>
+        </div>
+        <%= t.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>
