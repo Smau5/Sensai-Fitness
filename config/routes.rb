@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :company_lead_sources
   resources :company_leads
+  resources :company_sale_representatives
   root 'landing_pages#index'
 end

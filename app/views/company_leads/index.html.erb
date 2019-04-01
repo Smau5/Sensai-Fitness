@@ -1,23 +1,25 @@
-<h1>Company Leads List</h1>
-<% @company_leads.each do |company_lead| %>
-<div class="row">
-    <div class="col">
-        <%= company_lead.id %>
+<div class="container">
+    <h1>Company Leads List</h1>
+    <% @company_leads.each do |company_lead| %>
+    <div class="row">
+        <div class="col">
+            <%= company_lead.id %>
+        </div>
+        <div class="col">
+            <%= company_lead.name %>
+        </div>
+        <div class="col">
+            <%= company_lead.lastName %>
+        </div>
+        <div class="col">
+            <%= company_lead.email %>
+        </div>
+        <div class="col">
+            <%= company_lead.cellphone %>
+        </div>
+        <div class="col">
+            <%= company_lead.company_lead_source.description %>
+        </div>
     </div>
-    <div class="col">
-        <%= company_lead.name %>
-    </div>
-    <div class="col">
-        <%= company_lead.lastName %>
-    </div>
-    <div class="col">
-        <%= company_lead.email %>
-    </div>
-    <div class="col">
-        <%= company_lead.cellphone %>
-    </div>
-    <div class="col">
-        <%= company_lead.company_lead_source.description %>
-    </div>
+    <% end %>
 </div>
-<% end %>

@@ -21,6 +21,6 @@ class CompanyLeadsController < ApplicationController
     private
 
     def companyLead_params
-        params.require(:company_lead).permit(:name, :lastname, :email, :cellphone, :company_lead_source_id)
+        params.require(:company_lead).permit(:name, :lastName, :email, :cellphone, :company_lead_source_id)
     end
 end

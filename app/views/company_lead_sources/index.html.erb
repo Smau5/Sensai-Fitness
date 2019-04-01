@@ -1,10 +1,12 @@
-<% @company_lead_sources.each do |company_lead_source| %>
-<div class="row">
-    <div class="col">
-        <%= company_lead_source.id %>
+<div class="container">
+    <% @company_lead_sources.each do |company_lead_source| %>
+    <div class="row">
+        <div class="col">
+            <%= company_lead_source.id %>
+        </div>
+        <div class="col">
+            <%= company_lead_source.description %>
+        </div>
     </div>
-    <div class="col">
-        <%= company_lead_source.description %>
-    </div>
+    <% end %>
 </div>
-<% end %>
