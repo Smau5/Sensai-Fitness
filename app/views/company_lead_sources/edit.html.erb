@@ -1,0 +1,10 @@
+<div class="container">
+    <h1> new lead source</h1>
+    <%= form_for @company_lead_source do |c| %>
+        <div class="form-group">
+            <%= c.label :description %>
+            <%= c.text_field :description, class: "form-control"  %>
+        </div>
+        <%= c.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>
