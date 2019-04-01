@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Company Transaction Leads List</h1>
+    <% @company_lead_transactions.each do |company_lead_transaction| %>
+    <div class="row">
+        <div class="col">
+            <%= company_lead_transaction.id %>
+        </div>
+        <div class="col">
+            <%= company_lead_transaction.description %>
+        </div>
+        <div class="col">
+            <%= company_lead_transaction.company_lead.name %> <%= company_lead_transaction.company_lead.lastName %>
+        </div>
+        <div class="col">
+            <%= company_lead_transaction.company_sale_representative.name %> <%= company_lead_transaction.company_sale_representative.lastName %>
+        </div>
+        <div class="col">
+            <%= company_lead_transaction.company_lead_transaction_source.name %>
+        </div>
+    </div>
+    </br>
+    <% end %>
+</div>
