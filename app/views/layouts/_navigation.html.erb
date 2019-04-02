@@ -37,6 +37,9 @@
           <%= link_to "List fitness resources", fitness_resources_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
           <%= link_to "List fitness resources with disciplines", fitness_resource_discipline_types_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Create fitness resource plan", new_plan_path, class:"dropdown-item" %>
+          <%= link_to "List fitness resources plan", plans_path, class:"dropdown-item" %>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -65,9 +68,6 @@
           <%= link_to "Create Speciality", new_speciality_path, class:"dropdown-item" %>
           <%= link_to "List Speciality", specialities_path, class:"dropdown-item" %>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
   </div>

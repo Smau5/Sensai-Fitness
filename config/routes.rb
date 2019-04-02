@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :specialities
   resources :instructors
   resources :materials
+  resources :plans
   
   
   root 'landing_pages#index'

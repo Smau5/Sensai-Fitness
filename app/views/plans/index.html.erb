@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Plans List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Fitness resource</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @plans.each do |plan| %>
+            
+                <tr>
+                    <td><%= plan.name %></td>
+                    <td><%= plan.description %></td>
+                    <td><%= plan.price %></td>
+                    <td ><%= plan.fitness_resource.name if plan.fitness_resource %></td>
+                    <td><%= link_to "Edit", 
+                                    edit_plan_path(plan), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    plan_path(plan), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
