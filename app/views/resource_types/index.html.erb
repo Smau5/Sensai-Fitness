@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Resource type List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @resource_types.each do |resource_type| %>
+            
+                <tr>
+                    <td><%= resource_type.name %></td>
+                    <td><%= resource_type.description %></td>
+                    <td><%= link_to "Edit", 
+                                    edit_resource_type_path(resource_type), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    resource_type_path(resource_type), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

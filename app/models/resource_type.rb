@@ -1,0 +1,3 @@
+class ResourceType < ApplicationRecord
+
+end
