@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_024009) do
+ActiveRecord::Schema.define(version: 2019_04_02_034408) do
 
   create_table "company_lead_sources", force: :cascade do |t|
     t.string "description"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_04_02_024009) do
     t.time "closeTime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "resource_type_id"
   end
 
   create_table "resource_types", force: :cascade do |t|
