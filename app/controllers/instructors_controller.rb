@@ -50,6 +50,6 @@ class InstructorsController < ApplicationController
     end
 
     def instructor_params
-        params.require(:instructor).permit(:name, :lastName, :email, :cellphone, :speciality_id)
+        params.require(:instructor).permit(:name, :lastName, :email, :cellphone, :speciality_id, :fitness_resource_id)
     end
 end
