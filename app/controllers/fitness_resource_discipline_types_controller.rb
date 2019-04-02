@@ -15,7 +15,7 @@ class FitnessResourceDisciplineTypesController < ApplicationController
         @fitness_resource_discipline_type = FitnessResourceDisciplineType.new(fitness_resource_discipline_type_params)
         if @fitness_resource_discipline_type.save
             flash[:success] = "Fitness and type was saved successfully!"
-            redirect_to fitness_resource_discipline_types_path
+            redirect_to fitness_resources_path
         else
             render 'new'
         end
