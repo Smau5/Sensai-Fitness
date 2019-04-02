@@ -11,6 +11,7 @@
                 <th>CloseTime</th>
                 <th>Type</th>
                 <th>Show disciplines</th>
+                <th>Show plans</th>
                 <th>Add discipline</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -30,6 +31,10 @@
                     <td><%= link_to "Show disciplines", 
                                     fitness_resource_discipline_type_path(fitness_resource.id),
                                     class: "btn btn-xs btn-success" %>
+                    </td>
+                    <td><%= link_to "Show Plans", 
+                                    plan_path(fitness_resource.id),
+                                    class: "btn btn-xs btn-info" %>
                     </td>
                     <td><%= link_to "Add discipline", 
                                     {:controller => "fitness_resource_discipline_types", :action => "new", :fitness_resource_id => fitness_resource.id },

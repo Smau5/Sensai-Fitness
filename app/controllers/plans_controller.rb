@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
 
-    before_action :find_plan, only: [:edit, :update, :show, :destroy]
+    before_action :find_plan, only: [:edit, :update, :destroy]
 
     def index
         @plans = Plan.all
@@ -20,6 +20,10 @@ class PlansController < ApplicationController
         end
     end
 
+    def show
+        @fitness_resource = FitnessResource.find(params[:id])
+    end
+
     def edit
 
     end
@@ -37,10 +41,6 @@ class PlansController < ApplicationController
         @plan.destroy
         flash[:danger] = "Lead was succesfully deleted"
         redirect_to plans_path
-    end
-
-    def show
-
     end
 
     private

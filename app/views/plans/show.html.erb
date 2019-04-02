@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Fitness resource plans( <%= @fitness_resource.name %> )</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @fitness_resource.plans.each do |plan| %>
+            
+                <tr>
+                    <td><%= plan.name %></td>
+                    <td><%= plan.description %></td>
+                    <td><%= plan.price %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to 'back', fitness_resources_path %>
+</div>
