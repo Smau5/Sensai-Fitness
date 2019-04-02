@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Specialities List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @specialities.each do |speciality| %>
+                <tr>
+                    <td><%= speciality.name %></td>
+                    <td><%= speciality.description %></td>
+                    <td><%= link_to "Edit", 
+                                    edit_speciality_path(speciality), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    speciality_path(speciality), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
