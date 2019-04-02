@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Create instructor</h1>
+    <%= form_for @instructor do |i| %>
+        <div class="form-group">
+            <%= i.label :name, "Name" %>
+            <%= i.text_field :name, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= i.label :lastName, "Last Name" %>
+            <%= i.text_field :lastName, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= i.label :email, "Email" %>
+            <%= i.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= i.label :cellphone, "CellPhone" %>
+            <%= i.text_field :cellphone, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= i.label :speciality_id, 'Speciality'%>
+            <%= collection_select(:instructor, :speciality_id, Speciality.all, :id, :name, {}, {class: "form-control"} ) %>
+        </div>
+        <%= i.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>
