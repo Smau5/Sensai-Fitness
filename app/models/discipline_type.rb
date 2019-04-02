@@ -1,0 +1,3 @@
+class DisciplineType < ApplicationRecord
+
+end

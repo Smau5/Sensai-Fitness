@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Discipline types List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @discipline_types.each do |discipline_type| %>
+            
+                <tr>
+                    <td><%= discipline_type.name %></td>
+                    <td><%= discipline_type.description %></td>
+                    <td><%= link_to "Edit", 
+                                    edit_discipline_type_path(discipline_type), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    discipline_type_path(discipline_type), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

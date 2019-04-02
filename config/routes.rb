@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :company_lead_transaction_sources
   resources :company_lead_transactions
   resources :resource_types
+  resources :discipline_types
   root 'landing_pages#index'
 end
