@@ -25,6 +25,10 @@
                     <td><%= fitness_resource.openTime.strftime("%I:%M %P") %></td>
                     <td><%= fitness_resource.closeTime.strftime("%I:%M %P") %></td>
                     <td><%= fitness_resource.resource_type.name if fitness_resource.resource_type %></td>
+                    <td><%= link_to "Add discipline", 
+                                    {:controller => "fitness_resource_discipline_types", :action => "new", :fitness_resource_id => fitness_resource.id },
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
                     <td><%= link_to "Edit", 
                                     edit_fitness_resource_path(fitness_resource), 
                                     class: "btn btn-xs btn-primary" %>

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :resource_types
   resources :discipline_types
   resources :fitness_resources
+  resources :fitness_resource_discipline_types
+  
+
+  
   
   root 'landing_pages#index'
 end

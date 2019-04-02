@@ -51,4 +51,5 @@ class FitnessResourcesController < ApplicationController
     def fitness_resource_params
         params.require(:fitness_resource).permit(:name, :address, :phone, :website, :openTime, :closeTime, :resource_type_id)
     end
+
 end
