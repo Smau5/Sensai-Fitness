@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_191422) do
+ActiveRecord::Schema.define(version: 2019_04_02_194214) do
 
   create_table "company_lead_sources", force: :cascade do |t|
     t.string "description"
@@ -81,6 +81,13 @@ ActiveRecord::Schema.define(version: 2019_04_02_191422) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "fitness_resource_id"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "content"
+    t.integer "instructor_id"
   end
 
   create_table "resource_types", force: :cascade do |t|

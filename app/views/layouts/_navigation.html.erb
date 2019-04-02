@@ -33,13 +33,22 @@
           <%= link_to "Create resource type", new_resource_type_path, class:"dropdown-item" %>
           <%= link_to "List resource types", resource_types_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Register instructor", new_instructor_path, class:"dropdown-item" %>
-          <%= link_to "List instructors", instructors_path, class:"dropdown-item" %>
-          <div class="dropdown-divider"></div>
           <%= link_to "Create fitness resource", new_fitness_resource_path, class:"dropdown-item" %>
           <%= link_to "List fitness resources", fitness_resources_path, class:"dropdown-item" %>
           <div class="dropdown-divider"></div>
           <%= link_to "List fitness resources with disciplines", fitness_resource_discipline_types_path, class:"dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Instructor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Register instructor", new_instructor_path, class:"dropdown-item" %>
+          <%= link_to "List instructors", instructors_path, class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Register material", new_material_path, class:"dropdown-item" %>
+          <%= link_to "List material", materials_path, class:"dropdown-item" %>
         </div>
       </li>
       <li class="nav-item dropdown">

@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Register material</h1>
+    <%= form_for @material do |m| %>
+        <div class="form-group">
+            <%= m.label :name, "Name" %>
+            <%= m.text_field :name, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= m.label :description, "Description" %>
+            <%= m.text_field :description, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= m.label :content, "Content" %>
+            <%= m.text_field :content, class: "form-control" %>
+        </div>
+        <div class="form-group">
+            <%= m.label :instructor_id, 'Instructor'%>
+            <%= collection_select(:material, :instructor_id, Instructor.all, :id, :name_with_lastname, {}, {class: "form-control"} ) %>
+        </div>
+        <%= m.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>

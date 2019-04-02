@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :fitness_resource_discipline_types
   resources :specialities
   resources :instructors
+  resources :materials
   
   
   root 'landing_pages#index'
