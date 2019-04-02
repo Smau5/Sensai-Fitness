@@ -1,5 +1,5 @@
 class FitnessResourceDisciplineTypesController < ApplicationController
-    before_action :find_fitness_resource_discipline_type, only: [:edit, :update, :show, :destroy]
+    before_action :find_fitness_resource_discipline_type, only: [:edit, :update, :destroy]
 
     def index
         @fitness_resource_discipline_types = FitnessResourceDisciplineType.all
@@ -19,6 +19,11 @@ class FitnessResourceDisciplineTypesController < ApplicationController
         else
             render 'new'
         end
+    end
+
+    def show
+        @fitness_resource = FitnessResource.find(params[:id])
+
     end
 
     def edit

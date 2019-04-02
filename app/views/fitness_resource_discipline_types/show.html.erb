@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Fitness resource discipline List( <%= @fitness_resource.name %>)</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @fitness_resource.discipline_types.each do |discipline_type| %>
+            
+                <tr>
+                    <td><%= discipline_type.name %></td>
+                    <td><%= discipline_type.description %></td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to "Back", fitness_resources_path %>
+</div>
