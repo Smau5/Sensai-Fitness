@@ -37,6 +37,7 @@ class CompanySaleRepresentativesController < ApplicationController
         redirect_to company_sale_representatives_path
     end
 
+
     private
 
     def find_company_sale_representative

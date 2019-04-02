@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Create Transaction</h1>
+
+    <%= form_for @company_lead_transaction do |c| %>
+        <fieldset disabled>
+            <div class="form-group">
+                <label for="disabledTextInput">Full name</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="<%= @company_lead.name_with_lastname %>" >
+            </div>
+            <div class="form-group">
+                <label for="disabledTextInput">Email</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder=<%= @company_lead.email %>>
+            </div>
+            <div class="form-group">
+                <label for="disabledTextInput">Cellphone</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder=<%= @company_lead.cellphone %>>
+            </div>
+            <div class="form-group">
+                <label for="disabledTextInput">Source</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder=<%= @company_lead.company_lead_source.description if @company_lead.company_lead_source%>>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <%= c.label :description %>
+            <%= c.text_field :description, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= c.label :company_lead_source_id, 'Source'%>
+            <%= collection_select(:company_lead_transaction, :company_sale_representative_id, CompanySaleRepresentative.all, :id, :name_with_lastname, {}, {class: "form-control"} ) %>
+        </div>
+        <div class="form-group">
+            <%= c.label :company_lead_source_id, 'Source'%>
+            <%= collection_select(:company_lead_transaction, :company_lead_transaction_source_id, CompanyLeadTransactionSource.all, :id, :name, {}, {class: "form-control"} ) %>
+        </div>
+        <%= c.hidden_field :company_lead_id ,value: @company_lead.id %>
+        <%= c.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>
