@@ -1,23 +1,45 @@
 <div class="container">
     <h1>Company Transaction Leads List</h1>
-    <% @company_lead_transactions.each do |company_lead_transaction| %>
-    <div class="row">
-        <div class="col">
-            <%= company_lead_transaction.id %>
-        </div>
-        <div class="col">
-            <%= company_lead_transaction.description %>
-        </div>
-        <div class="col">
-            <%= company_lead_transaction.company_lead.name %> <%= company_lead_transaction.company_lead.lastName %>
-        </div>
-        <div class="col">
-            <%= company_lead_transaction.company_sale_representative.name %> <%= company_lead_transaction.company_sale_representative.lastName %>
-        </div>
-        <div class="col">
-            <%= company_lead_transaction.company_lead_transaction_source.name %>
-        </div>
-    </div>
-    </br>
-    <% end %>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Description</th>
+                <th>Sale representative</th>
+                <th>Transaction source</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @company_lead_transactions.each do |company_lead_transaction| %>
+            <tr>
+                <td>
+                    <%= company_lead_transaction.company_lead.name_with_lastname %>
+                </td>
+                <td>
+                    <%= company_lead_transaction.description %>
+                </td>
+                <td>
+                    <%= company_lead_transaction.company_sale_representative.name %> <%= company_lead_transaction.company_sale_representative.lastName %>
+                </td>
+                <td>
+                    <%= company_lead_transaction.company_lead_transaction_source.name %>
+                </td>
+                <td>
+                    <%= link_to "Edit", 
+                                edit_company_lead_transaction_path(company_lead_transaction), 
+                                class: "btn btn-xs btn-primary" %>
+                </td>
+                <td>
+                    <%= link_to "Delete", 
+                                    company_lead_transaction_path(company_lead_transaction), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>

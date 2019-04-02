@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Edit Transaction</h1>
+
+    <%= form_for @company_lead_transaction do |c| %>
+        <div class="form-group">
+            <%= c.label :company_lead_source_id, 'Source'%>
+            <%= collection_select(:company_lead_transaction, :company_lead_id, CompanyLead.all, :id, :name_with_lastname, {}, {class: "form-control"} ) %>
+        </div>
+        <div class="form-group">
+            <%= c.label :description %>
+            <%= c.text_field :description, class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= c.label :company_lead_source_id, 'Source'%>
+            <%= collection_select(:company_lead_transaction, :company_sale_representative_id, CompanySaleRepresentative.all, :id, :name_with_lastname, {}, {class: "form-control"} ) %>
+        </div>
+        <div class="form-group">
+            <%= c.label :company_lead_source_id, 'Source'%>
+            <%= collection_select(:company_lead_transaction, :company_lead_transaction_source_id, CompanyLeadTransactionSource.all, :id, :name, {}, {class: "form-control"} ) %>
+        </div>
+        <%= c.submit class: "btn btn-xs btn-primary"%>
+    <% end %>
+</div>
