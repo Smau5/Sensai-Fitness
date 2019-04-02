@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :company_lead_transactions
   resources :resource_types
   resources :discipline_types
+  resources :fitness_resources
+  
   root 'landing_pages#index'
 end

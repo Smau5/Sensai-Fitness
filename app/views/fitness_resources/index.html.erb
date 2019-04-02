@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Fitness resources List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>OpenTime</th>
+                <th>CloseTime</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @fitness_resources.each do |fitness_resource| %>
+            
+                <tr>
+                    <td><%= fitness_resource.name %></td>
+                    <td><%= fitness_resource.address %></td>
+                    <td><%= fitness_resource.phone %></td>
+                    <td><%= fitness_resource.website %></td>
+                    <td><%= fitness_resource.openTime.strftime("%I:%M %P") %></td>
+                    <td><%= fitness_resource.closeTime.strftime("%I:%M %P") %></td>
+                    <td><%= link_to "Edit", 
+                                    edit_fitness_resource_path(fitness_resource), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    fitness_resource_path(fitness_resource), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

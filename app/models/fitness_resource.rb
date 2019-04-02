@@ -1,0 +1,3 @@
+class FitnessResource < ApplicationRecord
+    
+end
