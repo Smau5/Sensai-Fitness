@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :materials
   resources :plans
   
+  get '/get_image/:filename' => 'images#ver'
   
   root 'landing_pages#index'
 end
