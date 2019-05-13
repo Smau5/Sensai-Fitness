@@ -10,6 +10,7 @@ class FitnessResourcesController < ApplicationController
     end
 
     def create
+        
         @fitness_resource = FitnessResource.new(fitness_resource_params)
         if @fitness_resource.save
             flash[:success] = "Fitness resource was updated successfully!"
@@ -24,6 +25,7 @@ class FitnessResourcesController < ApplicationController
     end
 
     def update
+        
         if @fitness_resource.update(fitness_resource_params)
             flash[:success] = "Fitness resource was updated successfully!"
             redirect_to fitness_resources_path
@@ -49,7 +51,7 @@ class FitnessResourcesController < ApplicationController
     end
 
     def fitness_resource_params
-        params.require(:fitness_resource).permit(:name, :address, :phone, :website, :openTime, :closeTime, :resource_type_id)
+        params.require(:fitness_resource).permit(:name, :address, :phone, :website, :openTime, :closeTime, :avatar, :resource_type_id)
     end
 
 end
