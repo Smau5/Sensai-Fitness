@@ -8,10 +8,14 @@ class PlansController < ApplicationController
 
     def new 
         @plan = Plan.new
+        @tags = Tag.all
+
     end
 
     def create
         @plan = Plan.new(plan_params)
+        @tag_ids = params.require(:tag_ids)
+        @plan.tag_ids = @tag_ids
         if @plan.save
             flash[:success] = "Register successful!"
             redirect_to plans_path
@@ -25,11 +29,14 @@ class PlansController < ApplicationController
     end
 
     def edit
-
+        @tags = Tag.all
     end
 
     def update
         if @plan.update(plan_params)
+            @tag_ids = params.require(:tag_ids)
+            @plan.tag_ids = @tag_ids
+            @plan.save
             flash[:success] = "Lead updated successfully!"
             redirect_to plans_path
         else
