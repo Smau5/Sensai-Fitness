@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_020230) do
+ActiveRecord::Schema.define(version: 2019_05_13_061146) do
 
   create_table "company_lead_sources", force: :cascade do |t|
     t.string "description"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2019_05_13_020230) do
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "price"
+    t.float "price"
     t.integer "fitness_resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

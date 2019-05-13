@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :instructors
   resources :materials
   resources :plans
+  resources :search_plans
   
   
   root 'landing_pages#index'

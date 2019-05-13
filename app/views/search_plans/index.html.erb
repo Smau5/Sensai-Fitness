@@ -1,0 +1,65 @@
+<script>
+</script>
+<div class="container">
+    <%= form_tag(search_plans_path, method: :get) do %>
+        <div class="form-group" id="type">
+            <label>Tags</label>
+            <ul>
+            <% @tags.each do |tag| %>
+                <li>
+                    <% if @tag_ids.include?(tag.id) %>
+                        <%= check_box_tag 'tag_ids[]', tag.id , {:checked => "checked"} %>
+                    <% else %>
+                        <%= check_box_tag 'tag_ids[]', tag.id %>
+                    <% end %>
+                    <%= h tag.name %>
+                </li>
+            <% end %>
+            </ul>
+        </div>
+        <label>Precio</label>
+        <%= text_field_tag :min, params[:min], placeholder: "Minimo" %>
+        <%= text_field_tag :max, params[:max], placeholder: "Maximo" %>
+    <%= submit_tag 'Search', name: nil %>
+    <% end %>
+    <h1>Plans List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Fitness resource</th>
+                <th>Tags</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @plans.each do |plan| %>
+                <tr>
+                    <td><%= plan.name %></td>
+                    <td><%= plan.description %></td>
+                    <td><%= plan.price %></td>
+                    <td ><%= plan.fitness_resource.name if plan.fitness_resource %></td>
+                    <td >
+                        <% plan.tags.each do |tag| %>
+                            <%= tag.name %> - 
+                        <% end %>
+                    </td>
+                    <td><%= link_to "Edit", 
+                                    edit_plan_path(plan), 
+                                    class: "btn btn-xs btn-primary" %>
+                    </td>
+                    <td><%= link_to "Delete", 
+                                    plan_path(plan), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: "btn btn-xs btn-danger" %>
+                    </td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

@@ -34,6 +34,7 @@ class PlansController < ApplicationController
 
     def update
         if @plan.update(plan_params)
+            PlanTag.where(plan_id: @plan.id).destroy_all
             @tag_ids = params.require(:tag_ids)
             @plan.tag_ids = @tag_ids
             @plan.save
