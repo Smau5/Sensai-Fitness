@@ -14,7 +14,7 @@ class PlansController < ApplicationController
 
     def create
         @plan = Plan.new(plan_params)
-        @tag_ids = params.require(:tag_ids)
+        @tag_ids = params[:tag_ids]
         @plan.tag_ids = @tag_ids
         if @plan.save
             flash[:success] = "Register successful!"
@@ -35,7 +35,7 @@ class PlansController < ApplicationController
     def update
         if @plan.update(plan_params)
             PlanTag.where(plan_id: @plan.id).destroy_all
-            @tag_ids = params.require(:tag_ids)
+            @tag_ids = params[:tag_ids]
             @plan.tag_ids = @tag_ids
             @plan.save
             flash[:success] = "Lead updated successfully!"
