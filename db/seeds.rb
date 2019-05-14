@@ -16,7 +16,6 @@
     Tag.create(name: 'Gordos')
     Tag.create(name: 'Flacos')
     Equipment.create(name: 'Pool')
-    Equipment.create(name: 'Pool')
     Equipment.create(name: 'Gym')
     Equipment.create(name: 'Yoga mats')
     Equipment.create(name: 'Boxing bag')
