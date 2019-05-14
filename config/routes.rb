@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :plans
   resources :search_plans
   resources :resource_equipments
+  resources :quiz
   
   get '/get_image/:filename' => 'images#ver'
   
