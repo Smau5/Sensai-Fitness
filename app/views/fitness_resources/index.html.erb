@@ -1,4 +1,4 @@
-<div class="container">
+<div style="margin-right:50px; margin-left:50px">
     <h1>Fitness resources List</h1>
     <table class="table">
         <thead>
@@ -42,8 +42,16 @@
                                     plan_path(fitness_resource.id),
                                     class: "btn btn-xs btn-info" %>
                     </td>
+                    <td><%= link_to "Show Equipments", 
+                                    resource_equipment_path(fitness_resource.id),
+                                    class: "btn btn-xs btn-success" %>
+                    </td>
                     <td><%= link_to "Add discipline", 
                                     {:controller => "fitness_resource_discipline_types", :action => "new", :fitness_resource_id => fitness_resource.id },
+                                    class: "btn btn-xs btn-secondary" %>
+                    </td>
+                    <td><%= link_to "Add Equipment", 
+                                    {:controller => "resource_equipments", :action => "new", :fitness_resource_id => fitness_resource.id },
                                     class: "btn btn-xs btn-secondary" %>
                     </td>
                     <td><%= link_to "Edit", 

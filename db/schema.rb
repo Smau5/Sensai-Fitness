@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_14_000031) do
+ActiveRecord::Schema.define(version: 2019_05_14_214405) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -76,6 +76,12 @@ ActiveRecord::Schema.define(version: 2019_05_14_000031) do
     t.string "description"
   end
 
+  create_table "equipments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fitness_resource_discipline_types", force: :cascade do |t|
     t.integer "fitness_resource_id"
     t.integer "discipline_type_id"
@@ -124,6 +130,13 @@ ActiveRecord::Schema.define(version: 2019_05_14_000031) do
     t.string "description"
     t.float "price"
     t.integer "fitness_resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resource_equipments", force: :cascade do |t|
+    t.integer "fitness_resource_id"
+    t.integer "equipment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
