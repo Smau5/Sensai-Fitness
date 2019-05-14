@@ -15,6 +15,25 @@
     Tag.create(name: '18-')
     Tag.create(name: 'Gordos')
     Tag.create(name: 'Flacos')
+    Equipment.create(name: 'Pool')
+    Equipment.create(name: 'Pool')
+    Equipment.create(name: 'Gym')
+    Equipment.create(name: 'Yoga mats')
+    Equipment.create(name: 'Boxing bag')
+    Equipment.create(name: 'Running track')
+    User.create(email:'admin@gmail.com',password_digest:"$2a$10$AJrCSZwoU3YAz8XdvTE/BO9MDNVaZiR4Q7A3O4e2N.pPmXpWAt/Ca")
+    CompanyLeadSource.create(description: 'Facebook')
+    CompanyLeadSource.create(description: 'Instagram')
+    CompanyLeadSource.create(description: 'Twitter')
+    CompanyLeadSource.create(description: 'Newspaper')
+    CompanyLeadSource.create(description: 'Friends or family')
+    CompanyLeadSource.create(description: 'Youtube')
+    CompanyLeadTransactionSource.create(name: 'Phone')
+    CompanyLeadTransactionSource.create(name: 'Email')
+    CompanyLeadTransactionSource.create(name: 'Videochat')
+    CompanyLeadTransactionSource.create(name: 'Chat')
+    CompanyLeadTransactionSource.create(name: 'Whatsapp')
+    CompanyLead.create(name: "Lucas", lastName: "Balcazar", email: "Lucas@gmail.com", cellphone: "6748394", company_lead_source_id:"1")
 
 
-
+    

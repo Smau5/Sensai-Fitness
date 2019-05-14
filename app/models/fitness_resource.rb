@@ -5,4 +5,6 @@ class FitnessResource < ApplicationRecord
     has_many :instructors
     has_many :plans
     has_one_attached :avatar
+    has_many :resource_equipments
+    has_many :equipments, through: :resource_equipments
 end
