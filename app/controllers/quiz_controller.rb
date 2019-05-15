@@ -7,8 +7,8 @@ class QuizController < ApplicationController
                 :index => 10,
                 :question => "Gender:",
                 :answers => [
-                    {:text => "Male", :tag => "male", :disables => 20},
-                    {:text => "Female", :tag => "female", :enables => 20},
+                    {:text => "Male", :tag => "Male", :disables => 20},
+                    {:text => "Female", :tag => "Female", :enables => 20},
                 ]
             }, 
             {
@@ -16,7 +16,7 @@ class QuizController < ApplicationController
                 :hide => true,
                 :question => "Are you pregnant?",
                 :answers => [
-                    {:text => "Yes", :tag => "pregnant"},
+                    {:text => "Yes", :tag => "Pregnant"},
                     {:text => "No"},
                 ]
             },   
@@ -24,15 +24,15 @@ class QuizController < ApplicationController
                 :index => 30,
                 :question => "Which one do you prefer?",
                 :answers => [
-                    {:text => "outdoor activities", :tag => "outdoor"},
-                    {:text => "indoor activities", :tag => "indoor"},
+                    {:text => "outdoor activities", :tag => "Outdoor"},
+                    {:text => "indoor activities", :tag => "Indoor"},
                 ]
             },   
             {
                 :index => 40,
                 :question => "Do you like swimming?",
                 :answers => [
-                    {:text => "Yes", :tag => "swimming"},
+                    {:text => "Yes", :tag => "Swimming"},
                     {:text => "No"},
                 ]
             },
@@ -40,7 +40,7 @@ class QuizController < ApplicationController
                 :index => 50,
                 :question => "Do you like team group activities?",
                 :answers => [
-                    {:text => "Yes", :tag => "teamgroup"},
+                    {:text => "Yes", :tag => "Teamgroup"},
                     {:text => "No"},
                 ]
             },
