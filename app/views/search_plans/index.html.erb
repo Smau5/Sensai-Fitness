@@ -31,8 +31,6 @@
                 <th>Price</th>
                 <th>Fitness resource</th>
                 <th>Tags</th>
-                <th>Edit</th>
-                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -47,17 +45,6 @@
                             <%= tag.name %> - 
                         <% end %>
                     </td>
-                    <td><%= link_to "Edit", 
-                                    edit_plan_path(plan), 
-                                    class: "btn btn-xs btn-primary" %>
-                    </td>
-                    <td><%= link_to "Delete", 
-                                    plan_path(plan), 
-                                    method: :delete, 
-                                    data: { confirm: "Are you sure?" }, 
-                                    class: "btn btn-xs btn-danger" %>
-                    </td>
-
                 </tr>
             <% end %>
         </tbody>
