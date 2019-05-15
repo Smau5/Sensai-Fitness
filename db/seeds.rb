@@ -78,3 +78,6 @@
     PlanTag.create(tag_id: "7",plan_id:"4")
     PlanTag.create(tag_id: "8",plan_id:"4")
     PlanTag.create(tag_id: "10",plan_id:"4")
+    PlanTag.create(tag_id: "9",plan_id:"5")
+    PlanTag.create(tag_id: "7",plan_id:"5")
+    PlanTag.create(tag_id: "10",plan_id:"6")
