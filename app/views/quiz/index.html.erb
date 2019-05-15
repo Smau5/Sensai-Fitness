@@ -1,0 +1,50 @@
+<div class="container">
+    <form id="form1" method="post" action="/quiz">
+        <% @quiz.each_with_index do |q,count| %>
+        
+            <div id=<%=q[:index]%> class=<%= if q[:hide] then "hidden" else "" end %> >
+                
+                <%=q[:question] %>
+                <br>
+                <% q[:answers].each do |a| %>
+                    <input type="radio" 
+                        name=<%= q[:index] %> 
+                        value=<%= a[:tag]%> 
+                        onClick=<%= 
+                        "enable(" + a[:enables].to_s + ");" +
+                        "disable(" + a[:disables].to_s + ");" 
+                        %> 
+                    />
+                    <%= a[:text] %>
+                    <br>
+                <% end %>
+                <br>
+    
+            </div>
+            
+        <% end %>
+    
+        <%= submit_tag "Submit quiz"%>
+    </form>
+
+
+    <script>
+        function setHidden(id, target){
+            var element = document.getElementById(id);
+            if(element && element.classList && element.classList.contains("hidden") != target ){
+                element.classList.toggle("hidden");
+                element.childNodes.forEach( (ch) => {
+                    if(ch.checked){
+                        ch.checked = false;
+                    }
+                })
+            }
+        }
+        function enable(id){
+            setHidden(id,false);
+        }
+        function disable(id){
+            setHidden(id,true);
+        }
+    </script>
+</div>
