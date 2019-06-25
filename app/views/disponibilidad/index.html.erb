@@ -1,0 +1,47 @@
+<div style="margin-right:50px; margin-left:50px">
+    <h1>Fitness resources List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>OpenTime</th>
+                <th>CloseTime</th>
+                <th>Type</th>
+                <th>Show disciplines</th>
+                <th>Show plans</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @fitness_resources.each do |fitness_resource| %>
+            
+                <tr>
+                    <% if fitness_resource.avatar.attached? %>
+                        <td><%= image_tag fitness_resource.avatar.variant(resize: "100x100") %></td>
+                    <% else %>
+                        <td><%= image_tag "http://denrakaev.com/wp-content/uploads/2015/03/no-image.png" , width: "100" %> </td>
+                    <% end %>
+                    <td><%= fitness_resource.name %></td>
+                    <td><%= fitness_resource.address %></td>
+                    <td><%= fitness_resource.phone %></td>
+                    <td><%= fitness_resource.website %></td>
+                    <td><%= fitness_resource.openTime.strftime("%I:%M %P") %></td>
+                    <td><%= fitness_resource.closeTime.strftime("%I:%M %P") %></td>
+                    <td><%= fitness_resource.resource_type.name if fitness_resource.resource_type %></td>
+                    <td><%= link_to "Show disciplines", 
+                                    fitness_resource_discipline_type_path(fitness_resource.id),
+                                    class: "btn btn-xs btn-success" %>
+                    </td>
+                    <td><%= link_to "Show Plans", 
+                                    plan_path(fitness_resource.id),
+                                    class: "btn btn-xs btn-info" %>
+                    </td>
+
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
