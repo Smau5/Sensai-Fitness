@@ -1,4 +1,27 @@
-<div class="container">
-    Result: 
-    <%= @results %>
-</div>
+<h1>Plans List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Fitness resource</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @plans.each do |plan| %>
+            <tr>
+                <td><%= plan.name %></td>
+                <td><%= plan.description %></td>
+                <td><%= plan.price %></td>
+                <td ><%= plan.fitness_resource.name if plan.fitness_resource %></td>
+                <td >
+                    <% plan.tags.each do |tag| %>
+                        <%= tag.name %> - 
+                    <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

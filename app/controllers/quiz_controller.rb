@@ -49,12 +49,13 @@ class QuizController < ApplicationController
     
     def  create
         @params = params.permit("10","20","30","40","50")
-        puts "hello there"
-        puts @params
         @results = []
         @params.each do |p|
             @results.push(p[1])
         end
+        @plans = Plan.joins(:tags).where(tags: { name: @results }).distinct
+        
+
         render "/quiz/results"
     end
 end
